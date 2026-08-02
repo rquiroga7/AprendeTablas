@@ -116,10 +116,13 @@ Con `score` y `levelMaxScore = N × 10`:
 
 ---
 
-## 6. Ranking (idéntico a AprendeGeoARG)
+## 6. Ranking (idéntico a AprendeGeoARG, normalizado contra el máximo del juego)
 
 - Mismo `RANKS` y mismos umbrales por porcentaje: Bronce I → Leyenda Supersónica.
-- Rango = `getRank(score, levelMaxScore)` (porcentaje sobre el máximo del nivel jugado).
+- El rango se calcula sobre el **máximo total del juego** (`gameMaxScore` = último nivel × 10 = 200), no sobre el máximo del nivel jugado:
+  - `rango = getRank(score, gameMaxScore)`
+- Consecuencia deseada: **Leyenda Supersónica** (≥ 96% de ese máximo) solo es alcanzable en el **último nivel**, porque es el único con suficientes cuentas para acumular ese porcentaje global. En los primeros niveles, 60/60 de ese nivel es apenas un 30% del máximo del juego.
+- El % de aprobación del nivel (paso/bien/repite) sí se calcula sobre el máximo del **nivel jugado** (`levelMaxScore`), igual que antes.
 - En el menú se muestra el **mejor rango** y la **última partida** de cada modo, igual que GeoARG por provincia.
 
 ---
