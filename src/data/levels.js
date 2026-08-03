@@ -12,15 +12,21 @@ export function getMode(key) {
 export const LEVEL_COUNT = 8
 export const MULTIPLICATIONS = [6, 8, 10, 12, 14, 16, 18, 20]
 
+// Seconds for full points (x) and before points hit zero (y), per level.
+// Level 1 is generous (6 s / 12 s) and windows tighten as levels go up.
+// All times are whole seconds. The values come from the original linear
+// curve (6→2 s for x, 12→4 s for y) with the final level's x raised by
+// 0.5 s (2 → 2.5, rounded to 3) so level 8 isn't too punishing, then all
+// times rounded to integers.
+const X_SECONDS = [6, 6, 5, 5, 4, 4, 3, 3]
+const Y_SECONDS = [12, 11, 10, 9, 8, 7, 6, 5]
+
 export function levelParams(levelIndex) {
   const idx = Math.min(Math.max(levelIndex, 0), LEVEL_COUNT - 1)
   const count = MULTIPLICATIONS[idx]
-  const span = LEVEL_COUNT - 1
-  // Level 1 is generous (6 s for full points, 12 s before zero); the
-  // window shrinks linearly down to level 8 (2 s / 4 s), which stays as is.
-  const x = +(6 - idx * (4 / span)).toFixed(3)
-  const y = +(12 - idx * (8 / span)).toFixed(3)
-  const total = +(count * y).toFixed(3)
+  const x = X_SECONDS[idx]
+  const y = Y_SECONDS[idx]
+  const total = count * y
   return { level: idx + 1, index: idx, count, x, y, total }
 }
 

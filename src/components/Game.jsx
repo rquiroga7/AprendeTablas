@@ -323,7 +323,7 @@ export default function Game({ modeKey, onBack, onRoundEnd }) {
           <div className={`marquee ${marqueeClass}`}>
             <div className="marquee-top">
               <span>Nivel {params.level} · {mode.label}</span>
-              <span className="marquee-window">Respuesta ≤ {params.y.toFixed(1)}s</span>
+              <span className="marquee-window">Respuesta ≤ {params.y}s</span>
             </div>
             <div className="marquee-label">¿Cuánto es?</div>
             <div className="equation">

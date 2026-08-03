@@ -25,14 +25,14 @@ Cada modo tiene **8 niveles progresivos**, con estadísticas guardadas por separ
 
 | Nivel | Cuentas | Ventana de puntos (x → y) | Tiempo total |
 |------:|--------:|--------------------------:|-------------:|
-| 1 | 6 | 6.0 s → 12.0 s | 72 s |
-| 2 | 8 | 5.4 s → 10.9 s | 87 s |
-| 3 | 10 | 4.9 s → 9.7 s | 97 s |
-| 4 | 12 | 4.3 s → 8.6 s | 103 s |
-| 5 | 14 | 3.7 s → 7.4 s | 104 s |
-| 6 | 16 | 3.1 s → 6.3 s | 101 s |
-| 7 | 18 | 2.6 s → 5.1 s | 93 s |
-| 8 | 20 | 2.0 s → 4.0 s | 80 s |
+| 1 | 6 | 6 s → 12 s | 72 s |
+| 2 | 8 | 6 s → 11 s | 88 s |
+| 3 | 10 | 5 s → 10 s | 100 s |
+| 4 | 12 | 5 s → 9 s | 108 s |
+| 5 | 14 | 4 s → 8 s | 112 s |
+| 6 | 16 | 4 s → 7 s | 112 s |
+| 7 | 18 | 3 s → 6 s | 108 s |
+| 8 | 20 | 3 s → 5 s | 100 s |
 
 Cada pregunta tiene una ventana de tiempo propia: respondé rápido para sumar más puntos. Si no respondés a tiempo, se muestra la respuesta correcta y avanzás con 0 puntos.
 
