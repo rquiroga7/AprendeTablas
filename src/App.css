@@ -366,6 +366,7 @@ button {
 .marquee.flash-timeout {
   border-color: var(--amber);
   box-shadow: 0 8px 30px var(--glow-amber);
+  animation: marqueePulse 0.5s ease-out;
 }
 
 .marquee-top {
@@ -438,6 +439,7 @@ button {
 
 .readout.timeout {
   color: var(--amber-dark);
+  animation: answerReveal 1s ease-out;
 }
 
 .feedback-chip {
@@ -723,6 +725,20 @@ button {
   0% { opacity: 0; }
   60% { opacity: 0.7; }
   100% { opacity: 1; }
+}
+
+@keyframes marqueePulse {
+  0% { box-shadow: 0 0 0 rgba(240, 192, 0, 0); }
+  30% { box-shadow: 0 0 46px var(--glow-amber); }
+  100% { box-shadow: 0 8px 30px var(--glow-amber); }
+}
+
+@keyframes answerReveal {
+  0% { transform: scale(0.4); opacity: 0; }
+  35% { transform: scale(1.25); opacity: 1; }
+  55% { transform: scale(1); }
+  70% { transform: scale(1.12); }
+  100% { transform: scale(1); }
 }
 
 /* ===== RESPONSIVE ===== */
