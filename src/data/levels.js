@@ -13,13 +13,13 @@ export const LEVEL_COUNT = 8
 export const MULTIPLICATIONS = [6, 8, 10, 12, 14, 16, 18, 20]
 
 // Seconds for full points (x) and before points hit zero (y), per level.
-// Level 1 is generous (6 s / 12 s) and windows tighten as levels go up.
+// Level 1 is generous (7 s / 13 s) and windows tighten as levels go up.
 // All times are whole seconds. The values come from the original linear
 // curve (6→2 s for x, 12→4 s for y) with the final level's x raised by
 // 0.5 s (2 → 2.5, rounded to 3) so level 8 isn't too punishing, then all
-// times rounded to integers.
-const X_SECONDS = [6, 6, 5, 5, 4, 4, 3, 3]
-const Y_SECONDS = [12, 11, 10, 9, 8, 7, 6, 5]
+// times rounded to integers and raised by 1 s.
+const X_SECONDS = [7, 7, 6, 6, 5, 5, 4, 4]
+const Y_SECONDS = [13, 12, 11, 10, 9, 8, 7, 6]
 
 export function levelParams(levelIndex) {
   const idx = Math.min(Math.max(levelIndex, 0), LEVEL_COUNT - 1)

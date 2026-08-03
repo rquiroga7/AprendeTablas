@@ -11,18 +11,18 @@ test('level 1 params', () => {
   const p = levelParams(0)
   assert.equal(p.level, 1)
   assert.equal(p.count, 6)
-  assert.equal(p.x, 6)
-  assert.equal(p.y, 12)
-  assert.equal(p.total, 72)
+  assert.equal(p.x, 7)
+  assert.equal(p.y, 13)
+  assert.equal(p.total, 78)
 })
 
 test('level 8 params', () => {
   const p = levelParams(7)
   assert.equal(p.level, 8)
   assert.equal(p.count, 20)
-  assert.equal(p.x, 3)
-  assert.equal(p.y, 5)
-  assert.equal(p.total, 100)
+  assert.equal(p.x, 4)
+  assert.equal(p.y, 6)
+  assert.equal(p.total, 120)
 })
 
 test('x and y decrease monotonically (non-increasing)', () => {
@@ -35,10 +35,10 @@ test('x and y decrease monotonically (non-increasing)', () => {
     prevX = p.x
     prevY = p.y
   }
-  assert.ok(Math.abs(levelParams(0).x - 6) < 1e-9)
-  assert.ok(Math.abs(levelParams(0).y - 12) < 1e-9)
-  assert.ok(Math.abs(levelParams(7).x - 3) < 1e-9)
-  assert.ok(Math.abs(levelParams(7).y - 5) < 1e-9)
+  assert.ok(Math.abs(levelParams(0).x - 7) < 1e-9)
+  assert.ok(Math.abs(levelParams(0).y - 13) < 1e-9)
+  assert.ok(Math.abs(levelParams(7).x - 4) < 1e-9)
+  assert.ok(Math.abs(levelParams(7).y - 6) < 1e-9)
 })
 
 test('times are whole seconds (integers)', () => {
