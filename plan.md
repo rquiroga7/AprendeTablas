@@ -53,17 +53,21 @@ Cada modo tiene sus propios **8 niveles** con estadísticas guardadas por separa
 
 | Nivel | Cuentas (N) | x (puntos completos) | y (0 puntos) | Tiempo total T = N×y |
 |------:|------------:|----------------------:|-------------:|----------------------:|
-| 1 | 6 | 4.00 s | 8.00 s | 48 s |
-| 2 | 8 | 3.71 s | 7.43 s | 59 s |
-| 3 | 10 | 3.43 s | 6.86 s | 69 s |
-| 4 | 12 | 3.14 s | 6.29 s | 75 s |
-| 5 | 14 | 2.86 s | 5.71 s | 80 s |
-| 6 | 16 | 2.57 s | 5.14 s | 82 s |
-| 7 | 18 | 2.29 s | 4.57 s | 82 s |
+| 1 | 6 | 6.00 s | 12.00 s | 72 s |
+| 2 | 8 | 5.43 s | 10.86 s | 87 s |
+| 3 | 10 | 4.86 s | 9.71 s | 97 s |
+| 4 | 12 | 4.29 s | 8.57 s | 103 s |
+| 5 | 14 | 3.71 s | 7.43 s | 104 s |
+| 6 | 16 | 3.14 s | 6.29 s | 101 s |
+| 7 | 18 | 2.57 s | 5.14 s | 93 s |
 | 8 | 20 | 2.00 s | 4.00 s | 80 s |
 
-Fórmulas (progresión lineal de L1→L8):
+Fórmulas (progresión lineal de L1→L8; el nivel 1 da ventanas amplias para que los primeros niveles sean más fáciles):
 
+```
+x(n) = 6 − n × 4/7
+y(n) = 12 − n × 8/7
+T(n) = N(n) × y(n)
 ```
 x(n) = 4 − (n−1) × 2/7
 y(n) = 8 − (n−1) × 4/7

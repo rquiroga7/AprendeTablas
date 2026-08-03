@@ -11,9 +11,9 @@ test('level 1 params', () => {
   const p = levelParams(0)
   assert.equal(p.level, 1)
   assert.equal(p.count, 6)
-  assert.equal(p.x, 4)
-  assert.equal(p.y, 8)
-  assert.equal(p.total, 48)
+  assert.equal(p.x, 6)
+  assert.equal(p.y, 12)
+  assert.equal(p.total, 72)
 })
 
 test('level 8 params', () => {
@@ -35,8 +35,8 @@ test('x and y decrease linearly and monotonically', () => {
     prevX = p.x
     prevY = p.y
   }
-  assert.ok(Math.abs(levelParams(0).x - 4) < 1e-9)
-  assert.ok(Math.abs(levelParams(0).y - 8) < 1e-9)
+  assert.ok(Math.abs(levelParams(0).x - 6) < 1e-9)
+  assert.ok(Math.abs(levelParams(0).y - 12) < 1e-9)
   assert.ok(Math.abs(levelParams(7).x - 2) < 1e-9)
   assert.ok(Math.abs(levelParams(7).y - 4) < 1e-9)
 })

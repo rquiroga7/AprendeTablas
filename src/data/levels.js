@@ -15,8 +15,11 @@ export const MULTIPLICATIONS = [6, 8, 10, 12, 14, 16, 18, 20]
 export function levelParams(levelIndex) {
   const idx = Math.min(Math.max(levelIndex, 0), LEVEL_COUNT - 1)
   const count = MULTIPLICATIONS[idx]
-  const x = +(4 - idx * (2 / (LEVEL_COUNT - 1))).toFixed(3)
-  const y = +(8 - idx * (4 / (LEVEL_COUNT - 1))).toFixed(3)
+  const span = LEVEL_COUNT - 1
+  // Level 1 is generous (6 s for full points, 12 s before zero); the
+  // window shrinks linearly down to level 8 (2 s / 4 s), which stays as is.
+  const x = +(6 - idx * (4 / span)).toFixed(3)
+  const y = +(12 - idx * (8 / span)).toFixed(3)
   const total = +(count * y).toFixed(3)
   return { level: idx + 1, index: idx, count, x, y, total }
 }
