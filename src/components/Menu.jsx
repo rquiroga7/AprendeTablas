@@ -29,6 +29,13 @@ function Menu({ onSelectMode }) {
   return (
     <div className="menu">
       <div className="menu-marquee">
+        <img
+          className="menu-banner"
+          src={`${import.meta.env.BASE_URL}banner_aprendetablas.jpg`}
+          alt="Aprende×Tablas"
+          width="1200"
+          height="252"
+        />
         <div className="menu-eyebrow">Arcade de aritmética</div>
         <h1 className="menu-title">
           <span className="t-word">Aprende</span>

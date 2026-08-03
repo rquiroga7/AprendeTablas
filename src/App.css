@@ -64,6 +64,19 @@ button {
 
 .menu-marquee {
   max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-banner {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  margin-bottom: 8px;
 }
 
 .menu-eyebrow {

@@ -300,6 +300,13 @@ export default function Game({ modeKey, onBack, onRoundEnd }) {
       </header>
 
       <div className="game-stage">
+        <img
+          className="game-banner"
+          src={`${import.meta.env.BASE_URL}banner_aprendetablas.jpg`}
+          alt="Aprende×Tablas"
+          width="1200"
+          height="252"
+        />
         <div className="arcade">
           <div className="stats-strip">
             <div className="stat">
