@@ -10,7 +10,7 @@ import Calculator from './Calculator'
 const LEVEL_ICONS = ['🌱', '🌿', '🌳', '🏔️', '🎓', '⭐', '👑', '🏆']
 
 const CORRECT_PAUSE = 900
-const TIMEOUT_PAUSE = 1200
+const TIMEOUT_PAUSE = 2700
 const WRONG_PAUSE = 350
 const MAX_TICK_DELTA = 2000
 
@@ -289,6 +289,7 @@ export default function Game({ modeKey, onBack, onRoundEnd }) {
 
   return (
     <div className="game">
+      {flash === 'timeout' && <div className="timeout-dim" aria-hidden="true"></div>}
       <header className="game-header">
         <button className="back-btn" onClick={onBack}>← Menú</button>
         <div className="game-header-title">{mode.icon} {mode.label}</div>
@@ -332,7 +333,7 @@ export default function Game({ modeKey, onBack, onRoundEnd }) {
               <span className="eq-num">{q.b}</span>
               <span className="eq-eq">=</span>
               <span className={`readout ${playing ? 'cursor' : ''} ${readoutClass}`}>
-                {readoutValue || '·'}
+                {readoutValue}
               </span>
             </div>
             {feedback?.type === 'correct' && (

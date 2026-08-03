@@ -215,6 +215,20 @@ button {
   min-height: 100vh;
 }
 
+.timeout-dim {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(120, 20, 30, 0.45) 0%, rgba(60, 0, 10, 0.82) 75%);
+  z-index: 250;
+  pointer-events: none;
+  animation: timeoutDimIn 0.35s ease-out forwards;
+}
+
+@keyframes timeoutDimIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .game-loading {
   display: flex;
   align-items: center;
@@ -366,7 +380,28 @@ button {
 .marquee.flash-timeout {
   border-color: var(--amber);
   box-shadow: 0 8px 30px var(--glow-amber);
-  animation: marqueePulse 0.5s ease-out;
+  animation: marqueePulse 0.9s ease-out;
+}
+
+.marquee.flash-timeout .equation {
+  position: relative;
+  z-index: 260;
+}
+
+.marquee.flash-timeout .eq-num,
+.marquee.flash-timeout .eq-times {
+  color: #ffe08a;
+  text-shadow: 0 0 10px rgba(255, 200, 40, 0.9), 0 0 26px rgba(255, 200, 40, 0.8), 0 0 48px rgba(255, 200, 40, 0.5);
+}
+
+.marquee.flash-timeout .eq-times {
+  color: #9cc8ff;
+  text-shadow: 0 0 10px rgba(35, 122, 253, 0.9), 0 0 26px rgba(35, 122, 253, 0.8), 0 0 48px rgba(35, 122, 253, 0.5);
+}
+
+.marquee.flash-timeout .eq-eq {
+  color: #8ff0dd;
+  text-shadow: 0 0 10px rgba(18, 179, 134, 0.9), 0 0 26px rgba(18, 179, 134, 0.8), 0 0 48px rgba(18, 179, 134, 0.5);
 }
 
 .marquee-top {
@@ -419,8 +454,8 @@ button {
 }
 
 .readout {
-  font-family: 'Space Mono', monospace;
-  font-weight: 700;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
   color: var(--amber-dark);
   min-width: 1.5em;
   text-align: center;
@@ -438,8 +473,12 @@ button {
 }
 
 .readout.timeout {
-  color: var(--amber-dark);
-  animation: answerReveal 1s ease-out;
+  position: relative;
+  z-index: 300;
+  color: #fff5e0;
+  background: transparent;
+  text-shadow: 0 0 10px var(--glow-amber), 0 0 26px var(--glow-amber), 0 0 48px rgba(255, 200, 40, 0.9);
+  animation: answerReveal 2.7s ease-out;
 }
 
 .feedback-chip {
@@ -734,11 +773,13 @@ button {
 }
 
 @keyframes answerReveal {
-  0% { transform: scale(0.4); opacity: 0; }
-  35% { transform: scale(1.25); opacity: 1; }
-  55% { transform: scale(1); }
-  70% { transform: scale(1.12); }
-  100% { transform: scale(1); }
+  0% { transform: scale(0.3); opacity: 0; text-shadow: 0 0 0 rgba(240, 192, 0, 0); }
+  20% { transform: scale(1.3); opacity: 1; text-shadow: 0 0 18px rgba(240, 192, 0, 0.9); }
+  35% { transform: scale(1); }
+  50% { transform: scale(1.18); text-shadow: 0 0 26px rgba(240, 192, 0, 0.9); }
+  65% { transform: scale(1); }
+  80% { transform: scale(1.12); text-shadow: 0 0 22px rgba(240, 192, 0, 0.8); }
+  100% { transform: scale(1); text-shadow: 0 0 16px rgba(240, 192, 0, 0.5); }
 }
 
 /* ===== RESPONSIVE ===== */

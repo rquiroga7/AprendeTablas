@@ -48,9 +48,9 @@ test('order differs between draws', () => {
 test('drops the 1s table from level 3 onward in 1-3 and all modes', () => {
   // Levels 1-2 (index 0 and 1) keep the 1s table.
   for (const idx of [0, 1]) {
-    const qs13 = generateQuestions('1-3', 10, idx)
+    const qs13 = generateQuestions('1-3', 27, idx)
     assert.ok(qs13.some(q => q.a === 1), `1-3 keeps 1s at level ${idx + 1}`)
-    const qsAll = generateQuestions('all', 10, idx)
+    const qsAll = generateQuestions('all', 81, idx)
     assert.ok(qsAll.some(q => q.a === 1), `all keeps 1s at level ${idx + 1}`)
   }
   // Level 3+ (index >= 2) drop the 1s table.
