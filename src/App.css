@@ -386,6 +386,11 @@ button {
 .marquee.flash-timeout .equation {
   position: relative;
   z-index: 260;
+  padding: 10px 26px;
+  border-radius: 14px;
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 4px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35), inset 0 0 14px rgba(255, 255, 255, 0.18);
 }
 
 .marquee.flash-timeout .eq-num,
