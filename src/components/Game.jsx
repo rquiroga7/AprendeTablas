@@ -203,7 +203,7 @@ export default function Game({ modeKey, onBack, onRoundEnd }) {
 
     const index = Math.min(Math.max(idx, 0), LEVEL_COUNT - 1)
     const params = levelParams(index)
-    const qs = generateQuestions(modeKey, params.count)
+    const qs = generateQuestions(modeKey, params.count, index)
 
     levelIndexRef.current = index
     setLevelIndex(index)
