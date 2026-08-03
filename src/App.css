@@ -748,25 +748,50 @@ button {
   }
 
   .game-header {
-    padding: 10px 12px;
+    padding: 8px 12px;
     justify-content: center;
   }
 
   .game-stage {
-    padding: 14px 12px 20px;
+    padding: 10px 12px 14px;
+  }
+
+  .arcade {
+    gap: 10px;
   }
 
   .stats-strip {
-    padding: 10px 12px;
+    padding: 8px 12px;
+    border-radius: 14px;
   }
 
   .stats-strip .timer {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+  }
+
+  .stats-strip .stat-value {
+    font-size: 1rem;
+  }
+
+  .bars {
+    gap: 6px;
+  }
+
+  .bar-track {
+    height: 6px;
+  }
+
+  .keypad {
+    gap: 8px;
+    padding: 10px;
+    border-radius: 14px;
   }
 
   .key {
-    height: 56px;
+    height: 48px;
     font-size: 1.3rem;
+    border-radius: 12px;
+    border-bottom-width: 3px;
   }
 
   .key-enter {
@@ -774,11 +799,17 @@ button {
   }
 
   .equation {
-    font-size: clamp(2rem, 12vw, 2.8rem);
+    font-size: clamp(1.9rem, 11vw, 2.5rem);
+    gap: 10px;
   }
 
   .marquee {
-    padding: 14px 16px 18px;
+    padding: 10px 14px 14px;
+    border-radius: 14px;
+  }
+
+  .marquee-top {
+    margin-bottom: 8px;
   }
 
   .round-results {
